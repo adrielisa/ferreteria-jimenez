@@ -18,7 +18,8 @@ export default function Hero() {
           alt="Herramientas de ferretería"
           fill
           priority
-          quality={85}
+          fetchPriority="high"
+          quality={75}
           className="object-cover opacity-50"
           sizes="100vw"
         />

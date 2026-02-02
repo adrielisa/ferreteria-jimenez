@@ -39,13 +39,13 @@ export default function Examples() {
   return (
     <section className="py-16 sm:py-24 bg-zinc-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-zinc-900">
+        <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-center mb-4 text-zinc-900">
           Los grandes trabajos, comienzan con grandes herramientas
         </h2>
 
         {/* Carousel */}
         <div className="relative max-w-5xl mx-auto mt-12">
-          <div className="relative h-64 sm:h-96 rounded-xl overflow-hidden bg-zinc-400">
+          <div className="relative h-48 sm:h-80 md:h-96 rounded-xl overflow-hidden bg-zinc-400">
             <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500">
               <Image
                 src={examples[currentIndex].image}
@@ -54,9 +54,11 @@ export default function Examples() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
                 className="object-cover"
                 priority={currentIndex === 0}
+                quality={75}
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/40" />
-              <h3 className="relative z-10 text-2xl sm:text-3xl font-bold text-white drop-shadow-lg px-4">
+              <h3 className="relative z-10 text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg px-4 text-center">
                 {examples[currentIndex].title}
               </h3>
             </div>
@@ -64,19 +66,19 @@ export default function Examples() {
             {/* Navigation Arrows */}
             <button
               onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-all shadow-lg z-20"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-1 sm:p-2 rounded-full transition-all shadow-lg z-20"
               aria-label="Anterior"
             >
-              <svg className="w-6 h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-6 sm:h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-all shadow-lg z-20"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-1 sm:p-2 rounded-full transition-all shadow-lg z-20"
               aria-label="Siguiente"
             >
-              <svg className="w-6 h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-6 sm:h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -88,8 +90,8 @@ export default function Examples() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-3 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-orange-600 w-8' : 'bg-zinc-300 w-3'
+                className={`h-2 sm:h-3 rounded-full transition-all ${
+                  index === currentIndex ? 'bg-orange-600 w-6 sm:w-8' : 'bg-zinc-300 w-2 sm:w-3'
                 }`}
                 aria-label={`Ir a diapositiva ${index + 1}`}
               />

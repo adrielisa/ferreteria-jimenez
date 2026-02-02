@@ -49,8 +49,9 @@ export default function Products() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
-                  quality={80}
+                  quality={75}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  decoding="async"
                 />
               </div>
               <div className="p-6 text-center">

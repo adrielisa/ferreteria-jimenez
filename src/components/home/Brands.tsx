@@ -33,7 +33,8 @@ export default function Brands() {
                   height={130}
                   className="object-contain rounded-xl w-auto h-auto"
                   loading="lazy"
-                  quality={80}
+                  quality={75}
+                  decoding="async"
                 />
               </div>
             ))}
@@ -47,7 +48,8 @@ export default function Brands() {
                   height={130}
                   className="object-contain rounded-xl w-auto h-auto"
                   loading="lazy"
-                  quality={80}
+                  quality={75}
+                  decoding="async"
                 />
               </div>
             ))}
