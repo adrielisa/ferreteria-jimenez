@@ -1,26 +1,28 @@
-import Link from 'next/link';
+// src/app/(routes)/nosotros/page.tsx
+import { Metadata } from 'next';
+import AboutHero from '@/components/nosotros/AboutHero';
+import Values from '@/components/nosotros/Values';
+import Timeline from '@/components/nosotros/Timeline';
+import Map from '@/components/home/Map';
 
-export default function ContactoPage() {
+export const metadata: Metadata = {
+  title: 'Nosotros - Ferretería Jiménez | 15 años de experiencia',
+  description: 'Conoce la historia de Ferretería Jiménez. 15 años de experiencia brindando productos de calidad y excelente servicio al cliente en el sector ferretero.',
+  keywords: 'ferretería, nosotros, historia, misión, visión, valores, Jiménez',
+  openGraph: {
+    title: 'Nosotros - Ferretería Jiménez',
+    description: '15 años de experiencia en el sector ferretero',
+    type: 'website',
+  },
+};
+
+export default function NosotrosPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-zinc-50 px-4">
-      <div className="max-w-2xl w-full text-center">
-
-        
-        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">
-          Página en construcción
-        </h1>
-        
-        <p className="text-lg text-zinc-600 mb-8">
-          Estamos trabajando para traerte esta sección muy pronto.
-        </p>
-        
-        <Link
-          href="/"
-          className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full transition-colors"
-        >
-          Volver al inicio
-        </Link>
-      </div>
-    </div>
+    <>
+      <AboutHero />
+      <Values />
+      <Timeline />
+      <Map />
+    </>
   );
 }
