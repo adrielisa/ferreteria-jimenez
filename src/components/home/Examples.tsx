@@ -4,22 +4,23 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import WhatsAppButton from '../ui/WhatsAppButton';
+import Image from 'next/image';
 
 const examples = [
   {
     id: 1,
-    title: 'Construcción Residencial',
-    image: '/examples/example1.jpg',
+    title: 'Instalaciones eléctricas',
+    image: '/instalacionesElectricas.webp',
   },
   {
     id: 2,
-    title: 'Proyectos Comerciales',
-    image: '/examples/example2.jpg',
+    title: 'Proyectos de Plomería',
+    image: '/plomeria.webp',
   },
   {
     id: 3,
-    title: 'Remodelaciones',
-    image: '/examples/example3.jpg',
+    title: 'Construcción y Remodelación',
+    image: '/construccionRemodelacion.webp',
   },
 ];
 
@@ -48,7 +49,7 @@ export default function Examples() {
 
         {/* Carousel */}
         <div className="relative max-w-5xl mx-auto mt-12">
-          <div className="relative h-64 sm:h-96 rounded-xl overflow-hidden bg-zinc-300">
+          <div className="relative h-64 sm:h-96 rounded-xl overflow-hidden bg-zinc-400">
             <motion.div
               key={currentIndex}
               initial={{ opacity: 0 }}
@@ -56,14 +57,16 @@ export default function Examples() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
               className="absolute inset-0 flex items-center justify-center"
-              style={{
-                backgroundImage: `url(${examples[currentIndex].image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
             >
-              <div className="absolute inset-0 bg-black/30" />
-              <h3 className="relative z-10 text-2xl sm:text-3xl font-bold text-white">
+              <Image
+                src={examples[currentIndex].image}
+                alt={examples[currentIndex].title}
+                fill
+                className="object-cover"
+                priority={currentIndex === 0}
+              />
+              <div className="absolute inset-0 bg-black/40" />
+              <h3 className="relative z-10 text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">
                 {examples[currentIndex].title}
               </h3>
             </motion.div>
@@ -71,19 +74,19 @@ export default function Examples() {
             {/* Navigation Arrows */}
             <button
               onClick={goToPrevious}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-all"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-all shadow-lg"
               aria-label="Previous"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-all"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-all shadow-lg"
               aria-label="Next"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
