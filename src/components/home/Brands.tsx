@@ -22,7 +22,7 @@ export default function Brands() {
 
         {/* Infinite Carousel */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll">
+          <div className="flex animate-scroll will-change-transform">
             {/* First set */}
             {brands.map((brand, index) => (
               <div key={`first-${index}`} className="shrink-0 mx-3">
@@ -32,10 +32,12 @@ export default function Brands() {
                   width={200}
                   height={130}
                   className="object-contain rounded-xl"
+                  loading="lazy"
+                  quality={80}
                 />
               </div>
             ))}
-            {/* Duplicate set for seamless loop */}
+            {/* Duplicate set */}
             {brands.map((brand, index) => (
               <div key={`second-${index}`} className="shrink-0 mx-3">
                 <Image
@@ -44,6 +46,8 @@ export default function Brands() {
                   width={200}
                   height={130}
                   className="object-contain rounded-xl"
+                  loading="lazy"
+                  quality={80}
                 />
               </div>
             ))}
@@ -63,6 +67,10 @@ export default function Brands() {
 
         .animate-scroll {
           animation: scroll 20s linear infinite;
+        }
+
+        .will-change-transform {
+          will-change: transform;
         }
       `}</style>
     </section>

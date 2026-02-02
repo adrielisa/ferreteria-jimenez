@@ -1,7 +1,6 @@
 // src/components/home/Products.tsx
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -32,33 +31,26 @@ export default function Products() {
   return (
     <section className="py-16 sm:py-24 bg-zinc-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-center mb-12 text-zinc-900"
-        >
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-zinc-900">
           Nuestros productos
-        </motion.h2>
+        </h2>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {products.map((product, index) => (
-            <motion.div
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {products.map((product) => (
+            <div
               key={product.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
             >
-              <div className="relative h-48 bg-zinc-400">
+              <div className="relative h-48 bg-zinc-400 overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.category}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  quality={80}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
               <div className="p-6 text-center">
@@ -70,18 +62,9 @@ export default function Products() {
                   Ver productos
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-
-        {/* Link to all products */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mt-8"
-        >
-        </motion.div>
       </div>
     </section>
   );
