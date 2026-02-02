@@ -22,7 +22,7 @@ export default function Brands() {
 
         {/* Infinite Carousel */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll will-change-transform">
+          <div className="flex animate-scroll">
             {/* First set */}
             {brands.map((brand, index) => (
               <div key={`first-${index}`} className="shrink-0 mx-3">
@@ -31,7 +31,7 @@ export default function Brands() {
                   alt={brand.alt}
                   width={200}
                   height={130}
-                  className="object-contain rounded-xl"
+                  className="object-contain rounded-xl w-auto h-auto"
                   loading="lazy"
                   quality={80}
                 />
@@ -45,7 +45,7 @@ export default function Brands() {
                   alt={brand.alt}
                   width={200}
                   height={130}
-                  className="object-contain rounded-xl"
+                  className="object-contain rounded-xl w-auto h-auto"
                   loading="lazy"
                   quality={80}
                 />
@@ -54,25 +54,6 @@ export default function Brands() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
-        }
-
-        .will-change-transform {
-          will-change: transform;
-        }
-      `}</style>
     </section>
   );
 }
