@@ -48,7 +48,6 @@ const categories = [
       'Pinturas lavables y de alto rendimiento',
       'Acabados mate, satinado y brillante',
       'Brochas y rodillos de calidad profesional',
-      'Asesoría en combinación de colores',
     ],
     products: [
       { name: 'Pinturas', description: 'Vinílicas, esmaltes y más' },
@@ -65,7 +64,6 @@ const categories = [
       'Tubería PVC y cobre de calidad',
       'Conexiones certificadas para agua potable',
       'Llaves y accesorios ahorradores',
-      'Asesoría técnica en instalación',
     ],
     products: [
       { name: 'Tubería', description: 'PVC, cobre y flexible' },
@@ -82,7 +80,6 @@ const categories = [
       'Productos certificados por normas mexicanas',
       'Cable calibrado y certificado',
       'Sistemas de protección contra sobrecarga',
-      'Asesoría en cargas eléctricas',
     ],
     products: [
       { name: 'Cables', description: 'Varios calibres y colores' },
@@ -99,7 +96,6 @@ const categories = [
       'Tornillería métrica e inglesa',
       'Adhesivos de alta resistencia',
       'Materiales para acabados',
-      'Asesoría en selección de materiales',
     ],
     products: [
       { name: 'Tornillos', description: 'Para madera, metal y concreto' },

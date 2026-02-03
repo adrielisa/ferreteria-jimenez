@@ -6,7 +6,7 @@ import { MessageCircle } from 'lucide-react';
 
 export default function ContactHero() {
   return (
-    <section className="relative py-24 sm:py-32 bg-linear-to-br from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />

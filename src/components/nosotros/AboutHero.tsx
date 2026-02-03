@@ -32,7 +32,7 @@ export default function AboutHero() {
   };
 
   return (
-    <section className="py-20 sm:py-32 bg-white">
+    <section className="min-h-screen flex items-center justify-center bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}

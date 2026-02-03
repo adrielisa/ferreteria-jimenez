@@ -146,15 +146,15 @@ export default function ContactInfo() {
             <div className="space-y-3">
               <div className="flex justify-between items-center">
                 <span className="text-zinc-600">Lunes a Viernes</span>
-                <span className="font-semibold text-zinc-900">8:00 AM - 7:00 PM</span>
+                <span className="font-semibold text-zinc-900">9:00 AM - 8:00 PM</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-zinc-600">Sábados</span>
-                <span className="font-semibold text-zinc-900">8:00 AM - 6:00 PM</span>
+                <span className="font-semibold text-zinc-900">9:00 AM - 8:00 PM</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-zinc-600">Domingos</span>
-                <span className="font-semibold text-zinc-900">9:00 AM - 2:00 PM</span>
+                <span className="font-semibold text-zinc-900">9:00 AM - 8:00 PM</span>
               </div>
             </div>
           </div>
