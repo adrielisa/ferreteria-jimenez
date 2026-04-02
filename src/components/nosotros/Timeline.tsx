@@ -12,7 +12,7 @@ const milestones = [
   {
     year: '2014',
     title: 'Expansión',
-    description: 'Ampliamos nuestro inventario y alianzas con grandes marcas',
+    description: 'Ampliamos nuestro inventario para brindarles más opciones a nuestros clientes',
   },
   {
     year: '2019',
@@ -20,9 +20,9 @@ const milestones = [
     description: 'Implementamos sistemas digitales y mejoras en servicio',
   },
   {
-    year: '2024',
+    year: '2026',
     title: 'Presente',
-    description: 'Presencia online y compromiso con la innovación digital',
+    description: 'Presencia online y compromiso con el cliete en todo momento',
   },
 ];
 

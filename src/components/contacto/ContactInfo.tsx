@@ -2,8 +2,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { Phone, Mail, MapPin, Facebook, Instagram, Clock } from 'lucide-react';
-import Link from 'next/link';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const contactMethods = [
   {
@@ -21,8 +20,8 @@ const contactMethods = [
     icon: Mail,
     title: 'Correo Electrónico',
     description: 'Te respondemos en 24 horas',
-    value: 'contacto@ferreteria-jimenez.com',
-    link: 'mailto:contacto@ferreteria-jimenez.com',
+    value: 'fyt.jimenez@hotmail.com',
+    link: 'mailto:fyt.jimenez@hotmail.com',
     color: 'from-blue-50 to-cyan-50',
     iconColor: 'text-blue-600',
     borderColor: 'border-blue-200',
@@ -43,21 +42,9 @@ const contactMethods = [
 
 const socialMedia = [
   {
-    icon: Facebook,
-    name: 'Facebook',
-    link: 'https://facebook.com',
-    color: 'hover:text-blue-600',
-  },
-  {
-    icon: Instagram,
-    name: 'Instagram',
-    link: 'https://instagram.com',
-    color: 'hover:text-pink-600',
-  },
-  {
     icon: Phone,
     name: 'WhatsApp',
-    link: 'https://wa.me/529981265802',
+    link: 'https://wa.me/5219981265802',
     color: 'hover:text-green-600',
   },
 ];
@@ -156,33 +143,6 @@ export default function ContactInfo() {
                 <span className="text-zinc-600">Domingos</span>
                 <span className="font-semibold text-zinc-900">9:00 AM - 8:00 PM</span>
               </div>
-            </div>
-          </div>
-
-          {/* Social Media */}
-          <div className="text-center">
-            <h3 className="text-xl font-bold text-zinc-900 mb-6">
-              Síguenos en redes sociales
-            </h3>
-            
-            <div className="flex justify-center gap-4">
-              {socialMedia.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <motion.a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-14 h-14 rounded-full bg-white border-2 border-zinc-200 flex items-center justify-center text-zinc-600 ${social.color} hover:border-current transition-colors`}
-                    aria-label={social.name}
-                  >
-                    <Icon className="w-6 h-6" strokeWidth={2} />
-                  </motion.a>
-                );
-              })}
             </div>
           </div>
         </motion.div>

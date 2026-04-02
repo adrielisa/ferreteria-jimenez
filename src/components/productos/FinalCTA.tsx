@@ -30,7 +30,7 @@ export default function FinalCTA() {
           <WhatsAppButton message="Hola, necesito ayuda para encontrar un producto específico" />
 
           <p className="text-sm text-zinc-500 mt-6">
-            Respuesta inmediata • Asesoría personalizada • Mejores precios
+            Respuesta inmediata • Excelentes precios  • Atención de calidad
           </p>
         </motion.div>
       </div>

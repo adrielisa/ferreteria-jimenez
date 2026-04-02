@@ -17,15 +17,7 @@ const faqs = [
   {
     question: '¿Puedo solicitar una cotización?',
     answer: 'Por supuesto. Puedes solicitar cotizaciones a través de WhatsApp, correo electrónico o visitándonos en nuestra tienda. Proporciónanos detalles de lo que necesitas y te responderemos rápidamente.',
-  },
-  {
-    question: '¿Tienen servicio de asesoría técnica?',
-    answer: 'Sí, nuestro equipo tiene amplia experiencia y puede asesorarte en la selección de herramientas y materiales adecuados para tu proyecto, ya sea residencial, comercial o industrial.',
-  },
-  {
-    question: '¿Manejan ventas por mayoreo?',
-    answer: 'Sí, ofrecemos precios especiales para compras por mayoreo y para contratistas. Contáctanos para conocer nuestras condiciones y descuentos disponibles.',
-  },
+  }
 ];
 
 export default function FAQ() {
