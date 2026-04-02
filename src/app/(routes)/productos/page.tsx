@@ -31,7 +31,6 @@ const categories = [
       'Motores de alta potencia y eficiencia',
       'Sistemas de seguridad integrados',
       'Accesorios y refacciones disponibles',
-      'Servicio técnico especializado',
     ],
     products: [
       { name: 'Taladros', description: 'Con y sin percusión' },
