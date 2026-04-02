@@ -24,9 +24,6 @@ export default function Brands() {
           animation: scroll-brands 12s linear infinite;
           will-change: transform;
         }
-        .brands-track:hover {
-          animation-play-state: paused;
-        }
       `}</style>
 
       {/* Heading inside container */}
