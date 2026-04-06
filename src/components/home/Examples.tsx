@@ -1,107 +1,135 @@
-// src/components/home/Examples.tsx
+﻿// src/components/home/Examples.tsx
 'use client';
 
-import { useState, useCallback } from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const WhatsAppButton = dynamic(() => import('../ui/WhatsAppButton'));
 
-const examples = [
-  {
-    id: 1,
-    title: 'Instalaciones eléctricas',
-    image: '/instalacionesElectricas.webp',
-  },
-  {
-    id: 2,
-    title: 'Proyectos de Plomería',
-    image: '/plomeria.webp',
-  },
-  {
-    id: 3,
-    title: 'Construcción y Remodelación',
-    image: '/construccionRemodelacion.webp',
-  },
-];
+function useCountUp(target: number, duration: number, trigger: boolean) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!trigger) return;
+    let rafId: number;
+    let startTime: number | null = null;
+
+    const animate = (now: number) => {
+      if (!startTime) startTime = now;
+      const progress = Math.min((now - startTime) / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * target));
+      if (progress < 1) rafId = requestAnimationFrame(animate);
+    };
+
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
+  }, [trigger, target, duration]);
+
+  return count;
+}
 
 export default function Examples() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
 
-  const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % examples.length);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
-  const goToPrevious = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + examples.length) % examples.length);
-  }, []);
+  const productsCount = useCountUp(500, 2400, inView);
+  const brandsCount = useCountUp(20, 1800, inView);
 
   return (
-    <section className="py-16 sm:py-24 bg-zinc-50">
+    <section ref={sectionRef} className="py-16 sm:py-24" style={{ backgroundColor: '#131316' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-center mb-4 text-zinc-900">
-          Los grandes trabajos, comienzan con grandes herramientas
-        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
-        {/* Carousel */}
-        <div className="relative max-w-5xl mx-auto mt-12">
-          <div className="relative h-48 sm:h-80 md:h-96 rounded-xl overflow-hidden bg-zinc-400">
-            <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500">
+          {/* Left: Store image with badge */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="relative"
+          >
+            <div className="relative h-80 sm:h-115 lg:h-135 rounded-2xl overflow-hidden">
               <Image
-                src={examples[currentIndex].image}
-                alt={examples[currentIndex].title}
+                src="/imagenTienda.png"
+                alt="Interior de Ferretería Jiménez"
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
                 className="object-cover"
-                priority={currentIndex === 0}
-                quality={75}
-                decoding="async"
+                quality={80}
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-black/40" />
-              <h3 className="relative z-10 text-sm sm:text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg px-4 text-center">
-                {examples[currentIndex].title}
-              </h3>
+            </div>
+            {/* +15 Years badge */}
+            <div className="absolute bottom-5 right-5 bg-orange-600 text-white px-5 py-4 rounded-xl shadow-2xl">
+              <div className="text-3xl font-bold leading-none">+15</div>
+              <div className="text-[10px] uppercase tracking-[0.15em] mt-1 font-medium">
+                Años de servicio
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Text & Stats */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight uppercase mb-6">
+              Tu ferretería de confianza:{' '}
+              <span className="text-orange-500">Calidad, precio y servicio.</span>
+            </h2>
+
+            <p className="text-zinc-400 text-base sm:text-lg leading-relaxed mb-10">
+              Ferretería Jiménez es una empresa familiar con 15 años de experiencia en el sector
+              ferretero, comprometida con brindarte productos de calidad y un excelente servicio
+              al cliente.
+            </p>
+
+            {/* Animated Stats */}
+            <div className="grid grid-cols-2 gap-8 mb-10">
+              <div>
+                <div className="text-5xl sm:text-6xl font-bold text-white tabular-nums">
+                  {productsCount}
+                  <span className="text-orange-500">+</span>
+                </div>
+                <div className="text-zinc-400 text-xs uppercase tracking-[0.15em] mt-2 font-medium">
+                  Productos disponibles
+                </div>
+              </div>
+              <div>
+                <div className="text-5xl sm:text-6xl font-bold text-white tabular-nums">
+                  {brandsCount}
+                  <span className="text-orange-500">+</span>
+                </div>
+                <div className="text-zinc-400 text-xs uppercase tracking-[0.15em] mt-2 font-medium">
+                  Marcas a tu disposición
+                </div>
+              </div>
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={goToPrevious}
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-1 sm:p-2 rounded-full transition-all shadow-lg z-20"
-              aria-label="Anterior"
-            >
-              <svg className="w-4 h-4 sm:w-6 sm:h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-1 sm:p-2 rounded-full transition-all shadow-lg z-20"
-              aria-label="Siguiente"
-            >
-              <svg className="w-4 h-4 sm:w-6 sm:h-6 text-zinc-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+            <WhatsAppButton className="uppercase tracking-widest text-sm" />
+          </motion.div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-6">
-            {examples.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-2 sm:h-3 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-orange-600 w-6 sm:w-8' : 'bg-zinc-300 w-2 sm:w-3'
-                }`}
-                aria-label={`Ir a diapositiva ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="flex justify-center mt-12">
-          <WhatsAppButton />
         </div>
       </div>
     </section>

@@ -3,33 +3,41 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: 'Inicio', href: '/' },
-    { name: 'Nosotros', href: '/nosotros' },
+    { name: 'Acerca de', href: '/nosotros' },
     { name: 'Productos', href: '/productos' },
     { name: 'Contacto', href: '/contacto' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 text-white shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-white/5" style={{ backgroundColor: 'rgba(14,14,17,0.95)' }}>
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
-          <Link href="/" className="text-xl sm:text-2xl font-bold hover:text-orange-500 transition-colors">
+          <Link
+            href="/"
+            className="text-xl sm:text-2xl font-bold text-orange-500 hover:text-orange-400 transition-colors uppercase tracking-wide"
+          >
             Ferreterías Jiménez
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm lg:text-base hover:text-orange-500 transition-colors font-medium"
+                className={`text-sm font-medium transition-colors hover:text-orange-500 ${
+                  pathname === link.href ? 'text-orange-500' : 'text-zinc-300'
+                }`}
               >
                 {link.name}
               </Link>
@@ -39,7 +47,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-zinc-300 hover:text-white transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -62,12 +70,14 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4">
+          <div className="md:hidden border-t border-zinc-800 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="block py-2 hover:text-orange-500 transition-colors"
+                className={`block py-3 text-sm font-medium transition-colors hover:text-orange-500 ${
+                  pathname === link.href ? 'text-orange-500' : 'text-zinc-300'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}

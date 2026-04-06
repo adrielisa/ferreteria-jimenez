@@ -14,22 +14,23 @@ const brands = [
 
 export default function Brands() {
   return (
-    <section className="py-12 sm:py-16 bg-white">
+    <section className="py-12 sm:py-16 border-y border-white/5" style={{ backgroundColor: '#131316' }}>
       <style>{`
         @keyframes scroll-brands {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
         }
         .brands-track {
-          animation: scroll-brands 12s linear infinite;
+          animation: scroll-brands 14s linear infinite;
           will-change: transform;
         }
       `}</style>
 
       {/* Heading inside container */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-zinc-900">
-          Contamos con una amplia gama de marcas
+        <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] text-center mb-2">Marcas</p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-white uppercase">
+          Contamos con las mejores marcas
         </h2>
       </div>
 
