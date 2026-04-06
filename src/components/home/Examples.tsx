@@ -58,7 +58,7 @@ export default function Examples() {
   return (
     <section ref={sectionRef} className="py-16 sm:py-24" style={{ backgroundColor: '#131316' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
           {/* Left: Store image with badge */}
           <motion.div
@@ -66,7 +66,7 @@ export default function Examples() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="relative"
+            className="relative mb-6"
           >
             <div className="relative h-80 sm:h-115 lg:h-135 rounded-2xl overflow-hidden">
               <Image
@@ -78,10 +78,10 @@ export default function Examples() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            {/* +15 Years badge */}
-            <div className="absolute bottom-5 right-5 bg-orange-600 text-white px-5 py-4 rounded-xl shadow-2xl">
-              <div className="text-3xl font-bold leading-none">+15</div>
-              <div className="text-[10px] uppercase tracking-[0.15em] mt-1 font-medium">
+            {/* +15 badge — hangs from bottom-right corner */}
+            <div className="absolute -bottom-6 right-4 bg-orange-600 text-white px-6 py-4 rounded-xl shadow-2xl text-left">
+              <div className="text-4xl font-bold leading-none">+15</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] mt-1 font-semibold">
                 Años de servicio
               </div>
             </div>

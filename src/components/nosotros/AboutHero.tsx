@@ -1,101 +1,66 @@
-// src/components/nosotros/AboutHero.tsx
+﻿// src/components/nosotros/AboutHero.tsx
 'use client';
 
-import { motion, Variants } from 'framer-motion';
-import { useRef } from 'react';
-import { Star, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function AboutHero() {
-  const ref = useRef(null);
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { 
-        duration: 0.8, 
-        ease: [0.43, 0.13, 0.23, 0.96]
-      },
-    },
-  };
-
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white">
+    <section className="pt-32 pb-20" style={{ backgroundColor: '#0E0E11' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Heading */}
         <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-center mb-12"
         >
-          {/* Title */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 text-center mb-8"
-          >
-            Nuestra Historia
-          </motion.h1>
-
-          {/* Main Description */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg sm:text-xl text-zinc-600 text-center mb-16 leading-relaxed"
-          >
-            Ferretería Jiménez es una empresa familiar con <span className="text-orange-600 font-semibold">15 años de experiencia</span> en el sector ferretero, comprometida con brindar productos de calidad y un excelente servicio al cliente.
-          </motion.p>
-
-          {/* Mission and Vision Grid */}
-          <motion.div
-            variants={containerVariants}
-            className="grid md:grid-cols-2 gap-6"
-          >
-            {/* Mission Card */}
-            <motion.div
-              variants={itemVariants}
-              className="bg-white border border-zinc-200 rounded-2xl p-8 hover:border-zinc-300 hover:shadow-md transition-all"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="text-orange-600 shrink-0">
-                  <Star className="w-7 h-7" strokeWidth={2} />
-                </div>
-                <h3 className="text-2xl font-bold text-zinc-900">Nuestra misión</h3>
-              </div>
-              <p className="text-zinc-600 leading-relaxed">
-                Proveer herramientas, material eléctrico y plomería de la más alta calidad, ofreciendo un servicio excepcional que supere las expectativas de nuestros clientes.
-              </p>
-            </motion.div>
-
-            {/* Vision Card */}
-            <motion.div
-              variants={itemVariants}
-              className="bg-white border border-zinc-200 rounded-2xl p-8 hover:border-zinc-300 hover:shadow-md transition-all"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="text-orange-600 shrink-0">
-                  <TrendingUp className="w-7 h-7" strokeWidth={2} />
-                </div>
-                <h3 className="text-2xl font-bold text-zinc-900">Nuestra visión</h3>
-              </div>
-              <p className="text-zinc-600 leading-relaxed">
-                Ser la opción preferida por calidad en herramientas, material eléctrico y plomería, con atención personalizada y un compromiso constante con la innovación.
-              </p>
-            </motion.div>
-          </motion.div>
+          <h1 className="text-6xl sm:text-7xl lg:text-9xl font-bold text-white uppercase leading-none tracking-tight mb-8">
+            Nuestra historia
+          </h1>
+          <p className="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+            Ferretería Jiménez es una empresa familiar con{' '}
+            <span className="text-orange-500 font-semibold">15 años de experiencia</span>{' '}
+            en el sector ferretero, comprometida con brindar productos de calidad y
+            un excelente servicio al cliente.
+          </p>
         </motion.div>
+
+        {/* Mission / Vision cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="grid md:grid-cols-2 max-w-4xl mx-auto"
+          style={{ gap: '1px', backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '1rem', overflow: 'hidden' }}
+        >
+          {/* Mission */}
+          <div className="p-10" style={{ backgroundColor: '#131316' }}>
+            <p className="text-zinc-500 text-xs uppercase tracking-[0.2em] font-semibold mb-5">
+              Nuestra Misión
+            </p>
+            <p className="text-zinc-300 leading-relaxed text-sm sm:text-base">
+              Comercializar productos ferreteros de la mejor calidad y garantía para nuestros
+              clientes, con la mayor satisfacción de lo que se llevan; de esta manera,
+              contribuimos cada día para que nuestros clientes estén satisfechos.
+            </p>
+          </div>
+
+          {/* Vision */}
+          <div className="p-10" style={{ backgroundColor: '#131316' }}>
+            <p className="text-zinc-500 text-xs uppercase tracking-[0.2em] font-semibold mb-5">
+              Nuestra Visión
+            </p>
+            <p className="text-zinc-300 leading-relaxed text-sm sm:text-base">
+              Ser la ferretería líder de la región y reconocida por ofrecer los mejores
+              productos y soluciones para el hogar, convirtiendo nos en el referente principal
+              del sector ferretero local, expandiendo nuestra presencia a través de nuevos
+              puntos de venta. Somos reconocidos no solo como vendedores, sino como asesores
+              técnicos de nuestros clientes.
+            </p>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
