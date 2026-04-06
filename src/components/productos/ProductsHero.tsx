@@ -1,65 +1,88 @@
-// src/components/productos/ProductsHero.tsx
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
-import { Package } from 'lucide-react';
 
 export default function ProductsHero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ backgroundColor: '#0E0E11' }}
+    >
+      {/* Subtle grid texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-orange-600 text-white mb-8"
-          >
-            <Package className="w-10 h-10" strokeWidth={2} />
-          </motion.div>
+      {/* Orange glows */}
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-orange-500 opacity-[0.05] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-75 h-75 bg-orange-500 opacity-[0.04] rounded-full blur-3xl pointer-events-none" />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+      <div className="container mx-auto px-8 sm:px-16 lg:px-24 relative z-10 pt-32 pb-20">
+        <div className="max-w-5xl">
+          {/* Label */}
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+            transition={{ duration: 0.6 }}
+            className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-orange-500 mb-6"
           >
-            Nuestros Productos
+            Catálogo completo
+          </motion.span>
+
+          {/* Main heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="text-6xl sm:text-8xl lg:text-[9rem] font-extrabold text-white leading-none tracking-tight mb-8"
+          >
+            NUESTROS
+            <br />
+            <span className="text-orange-500">PRODUCTOS</span>
           </motion.h1>
 
+          {/* Orange divider */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="w-24 h-0.5 bg-orange-500 origin-left mb-8"
+          />
+
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-xl text-zinc-300 mb-8 leading-relaxed"
+            className="text-zinc-400 text-lg sm:text-xl max-w-xl leading-relaxed mb-10"
           >
-            Descubre nuestra amplia selección de herramientas y materiales de las mejores marcas del mercado
+            Herramientas, materiales y más para cada proyecto. Encuentra todo
+            lo que necesitas en un solo lugar.
           </motion.p>
 
+          {/* Brand pills */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-wrap justify-center gap-4 text-sm text-zinc-400"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.65 }}
+            className="flex flex-wrap gap-3"
           >
-            <span className="bg-zinc-800 px-4 py-2 rounded-full">TRUPER</span>
-            <span className="bg-zinc-800 px-4 py-2 rounded-full">PRETUL</span>
-            <span className="bg-zinc-800 px-4 py-2 rounded-full">VOLTECK</span>
-            <span className="bg-zinc-800 px-4 py-2 rounded-full">FOSET</span>
+            {['TRUPER', 'PRETUL', 'VOLTECK', 'FOSET'].map((brand) => (
+              <span
+                key={brand}
+                className="text-xs font-semibold tracking-widest text-zinc-400 border border-white/10 rounded-full px-4 py-2 hover:border-orange-500/40 hover:text-orange-400 transition-colors"
+                style={{ backgroundColor: '#131316' }}
+              >
+                {brand}
+              </span>
+            ))}
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -55,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-none tracking-tight uppercase mb-8"
+            className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white leading-none tracking-tight uppercase mb-8"
           >
             Herramientas y
             <br />

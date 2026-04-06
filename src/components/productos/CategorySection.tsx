@@ -1,8 +1,7 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
-import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 interface Product {
   name: string;
@@ -26,103 +25,93 @@ export default function CategorySection({
   features,
   reverse = false,
 }: CategorySectionProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+  const sectionBg = reverse ? '#131316' : '#0E0E11';
+  const cardBg = reverse ? '#0E0E11' : '#131316';
 
   return (
-    <section className="py-16 sm:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}>
-          {/* Left: Info */}
+    <section className="py-24 sm:py-32" style={{ backgroundColor: sectionBg }}>
+      <div className="container mx-auto px-8 sm:px-16 lg:px-24">
+        <div
+          className={`flex flex-col gap-16 items-center ${
+            reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
+          }`}
+        >
+          {/* Info column */}
           <motion.div
-            initial={{ opacity: 0, x: reverse ? 20 : -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.8 }}
             className="flex-1"
+            initial={{ opacity: 0, x: reverse ? 40 : -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            {/* Icon & Title */}
+            {/* Icon + Label */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
-                <Icon className="w-7 h-7 text-orange-600" strokeWidth={2} />
+              <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center shrink-0">
+                <Icon className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900">
-                {category}
-              </h2>
+              <span className="text-xs font-semibold tracking-[0.15em] uppercase text-orange-500">
+                Categoría
+              </span>
             </div>
 
-            <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
+              {category}
+            </h2>
+
+            <p className="text-zinc-400 text-lg leading-relaxed mb-8">
               {description}
             </p>
 
             {/* Features */}
-            <div className="space-y-3 mb-8">
-              <h3 className="font-semibold text-zinc-900 text-lg mb-4">
-                Características destacadas:
-              </h3>
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3"
-                >
-                  <svg className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-zinc-600">{feature}</span>
-                </motion.div>
+            <ul className="space-y-3">
+              {features.map((feat, i) => (
+                <li key={i} className="flex items-start gap-3 text-zinc-300">
+                  <span className="mt-1.5 w-4 h-4 rounded-full bg-orange-500 shrink-0 flex items-center justify-center">
+                    <svg
+                      className="w-2.5 h-2.5 text-white"
+                      fill="none"
+                      viewBox="0 0 10 8"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M1 4l2.5 2.5L9 1"
+                      />
+                    </svg>
+                  </span>
+                  <span>{feat}</span>
+                </li>
               ))}
-            </div>
-
-            {/* CTA */}
-            <WhatsAppButton 
-              message={`Hola, me interesa cotizar productos de ${category}`}
-            />
+            </ul>
           </motion.div>
 
-          {/* Right: Products Grid */}
+          {/* Products grid */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="flex-1 w-full"
+            className="flex-1 w-full grid grid-cols-2 gap-4"
+            initial={{ opacity: 0, x: reverse ? -40 : 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="grid grid-cols-2 gap-4">
-              {products.map((product, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 hover:border-orange-300 hover:shadow-md transition-all"
-                >
-                  <h4 className="font-semibold text-zinc-900 mb-2">
-                    {product.name}
-                  </h4>
-                  <p className="text-sm text-zinc-600">
-                    {product.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+            {products.map((product, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.08 * i }}
+                className="rounded-2xl p-6 border border-white/5 hover:border-orange-500/30 transition-colors group"
+                style={{ backgroundColor: cardBg }}
+              >
+                <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center mb-3 group-hover:bg-orange-500/20 transition-colors">
+                  <Icon className="w-4 h-4 text-orange-500" strokeWidth={2} />
+                </div>
+                <h4 className="text-white font-semibold mb-1">{product.name}</h4>
+                <p className="text-zinc-500 text-sm">{product.description}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
