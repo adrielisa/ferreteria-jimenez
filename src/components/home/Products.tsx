@@ -74,9 +74,15 @@ export default function Products() {
                   alt={product.category}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  sizes={
+                    product.id === 1
+                      ? '(max-width: 640px) 50vw, 50vw'
+                      : product.id === 2
+                      ? '(max-width: 640px) 50vw, 50vw'
+                      : '(max-width: 640px) 50vw, 25vw'
+                  }
                   loading={product.id === 1 ? 'eager' : 'lazy'}
-                  quality={75}
+                  quality={product.id === 1 ? 90 : 75}
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
