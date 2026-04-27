@@ -5,7 +5,7 @@ import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 sm:py-32" style={{ backgroundColor: '#131316' }}>
+    <section className="py-24 sm:py-32" style={{ backgroundColor: '#0E0E11' }}>
       <div className="container mx-auto px-8 sm:px-16 lg:px-24">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
