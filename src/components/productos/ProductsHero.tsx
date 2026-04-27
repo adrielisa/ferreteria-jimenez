@@ -39,7 +39,7 @@ export default function ProductsHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-6xl sm:text-8xl lg:text-[9rem] font-extrabold text-white leading-none tracking-tight mb-8"
+            className="text-5xl sm:text-8xl lg:text-[9rem] font-extrabold text-white leading-none tracking-tight mb-8"
           >
             NUESTROS
             <br />
