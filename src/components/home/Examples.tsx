@@ -70,7 +70,7 @@ export default function Examples() {
           >
             <div className="relative h-80 sm:h-115 lg:h-135 rounded-2xl overflow-hidden">
               <Image
-                src="/imagenTienda.png"
+                src="/imagenTienda.webp"
                 alt="Interior de Ferretería Jiménez"
                 fill
                 className="object-cover"

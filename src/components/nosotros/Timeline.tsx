@@ -7,7 +7,7 @@ const milestones = [
   {
     year: '2009',
     title: 'Fundación',
-    description: 'Inicia operaciones Ferretería Jiménez con un pequeño local en Cancún, ofreciendo herramientas y materiales básicos de construcción.',
+    description: 'Inicia operaciones Ferretería Jiménez con un pequeño local en Cancún, ofreciendo herramientas.',
   },
   {
     year: '2014',

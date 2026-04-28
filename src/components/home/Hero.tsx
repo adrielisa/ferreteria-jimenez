@@ -31,13 +31,12 @@ export default function Hero() {
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center items-start text-left px-8 sm:px-16 lg:px-24 max-w-5xl">
           <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white leading-none tracking-tight uppercase mb-8">
-            Herramientas y
+            Herramientas,
             <br />
-            materiales de
+            plomeria y 
             <br />
-            <span className="text-orange-500">Calidad
-            <br />
-            Profesional</span>
+            <span className="text-orange-500">Electricidad
+            </span>
           </h1>
 
           <div>

@@ -25,13 +25,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Ferreterías Jiménez - Herramientas y Materiales de Calidad",
-  description: "Herramientas y materiales de calidad para tu obra o proyecto. Contamos con las mejores marcas en ferretería: TRUPER, PRETUL, VOLTECK, FOSET, FIERO, HERMEX.",
-  keywords: "ferretería, herramientas, construcción, materiales, Jiménez, TRUPER, PRETUL, plomería, pintura",
+  title: "Ferreterías Jiménez - Herramientas y de Calidad",
+  description: "Herramientas de calidad para tu obra o proyecto. Contamos con las mejores marcas en ferretería: TRUPER, PRETUL, VOLTECK, FOSET, FIERO, HERMEX.",
+  keywords: "ferretería, herramientas, construcción, Jiménez, TRUPER, PRETUL, plomería, pintura",
   authors: [{ name: "Ferreterías Jiménez" }],
   openGraph: {
-    title: "Ferreterías Jiménez - Herramientas y Materiales",
-    description: "Herramientas y materiales de calidad para tu obra o proyecto",
+    title: "Ferreterías Jiménez - Herramientas",
+    description: "Herramientas de calidad para tu obra o proyecto",
     type: "website",
     locale: "es_MX",
   },

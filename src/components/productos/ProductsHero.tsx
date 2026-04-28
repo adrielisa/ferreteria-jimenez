@@ -61,7 +61,7 @@ export default function ProductsHero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-zinc-400 text-lg sm:text-xl max-w-xl leading-relaxed mb-10"
           >
-            Herramientas, materiales y más para cada proyecto. Encuentra todo
+            Herramientas, plomeria y electricidad para cada proyecto. Encuentra todo
             lo que necesitas en un solo lugar.
           </motion.p>
 
