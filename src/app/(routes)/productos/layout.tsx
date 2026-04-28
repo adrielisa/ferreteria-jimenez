@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Productos - Ferretería Jiménez | Herramientas, plomeria y electricidad',
+  title: 'Productos - Ferretería Jiménez | Herramientas, plomería y electricidad',
   description: 'Descubre nuestra amplia selección de herramientas manuales, eléctricas, materiales de pintura, plomería y más. Las mejores marcas al mejor precio.',
   keywords: 'herramientas, productos ferretería, herramientas manuales, herramientas eléctricas, plomería, pintura, material eléctrico',
   openGraph: {
     title: 'Productos - Ferretería Jiménez',
-    description: 'Amplia selección de herramientas, plomeria y electricidad',
+    description: 'Amplia selección de herramientas, plomería y electricidad',
     type: 'website',
   },
 };

@@ -17,8 +17,8 @@ const itemVariants = {
 };
 
 const hours = [
-  { day: 'Lunes a Viernes', time: '9:00 AM – 8:00 PM' },
-  { day: 'Sábados', time: '9:00 AM – 8:00 PM' },
+  { day: 'Lunes a Viernes', time: '9:00 AM – 6:00 PM' },
+  { day: 'Sábados', time: '9:00 AM –8:00 PM' },
   { day: 'Domingos', time: '9:00 AM – 8:00 PM' },
 ];
 

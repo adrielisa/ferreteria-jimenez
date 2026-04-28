@@ -33,7 +33,7 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold text-white leading-none tracking-tight uppercase mb-8">
             Herramientas,
             <br />
-            plomeria y 
+            plomería y 
             <br />
             <span className="text-orange-500">Electricidad
             </span>

@@ -68,7 +68,7 @@ export default function Map() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm uppercase tracking-wider mb-1">Horarios</p>
-                  <p className="text-zinc-400 text-sm">Lun — Dom: 9:00AM — 6:00PM</p>
+                  <p className="text-zinc-400 text-sm">Lun — Dom: 9:00 AM — 8:00 PM</p>
                 </div>
               </div>
 

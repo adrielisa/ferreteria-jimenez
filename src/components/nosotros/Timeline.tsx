@@ -7,7 +7,7 @@ const milestones = [
   {
     year: '2009',
     title: 'Fundación',
-    description: 'Inicia operaciones Ferretería Jiménez con un pequeño local en Cancún, ofreciendo herramientas.',
+    description: 'Ferretería Jiménez inicia operaciones con un pequeño local en Cancún, ofreciendo herramientas básicas.',
   },
   {
     year: '2014',
@@ -17,12 +17,12 @@ const milestones = [
   {
     year: '2019',
     title: 'Modernización',
-    description: 'Incorporamos marcas líderes del mercado como TRUPER, DEWALT y PRETUL, fortaleciendo nuestra oferta de productos de calidad profesional.',
+    description: 'Incorporamos marcas líderes del mercado como TRUPER, HERMEX y PRETUL, fortaleciendo nuestra oferta de productos de calidad profesional.',
   },
   {
     year: '2026',
     title: 'Presente',
-    description: 'Presencia online, atención personalizada y un compromiso constante con nuestros clientes en todo momento.',
+    description: 'Presencia online, atención personalizada y un compromiso constante con nuestros clientes.',
   },
 ];
 

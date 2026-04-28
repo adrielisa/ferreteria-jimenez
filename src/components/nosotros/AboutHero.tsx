@@ -40,9 +40,7 @@ export default function AboutHero() {
               Nuestra Misión
             </p>
             <p className="text-zinc-300 leading-relaxed text-sm sm:text-base">
-              Comercializar productos ferreteros de la mejor calidad y garantía para nuestros
-              clientes, con la mayor satisfacción de lo que se llevan; de esta manera,
-              contribuimos cada día para que nuestros clientes estén satisfechos.
+              Ofrecer productos de ferretería de calidad superior y garantía certificada, brindando soluciones integrales que superen las expectativas de nuestros clientes. Nos dedicamos a proporcionar un servicio excepcional y personalizado, asegurando que cada compra se traduzca en una experiencia de plena satisfacción y valor real para todos sus proyectos.
             </p>
           </div>
 
@@ -52,11 +50,7 @@ export default function AboutHero() {
               Nuestra Visión
             </p>
             <p className="text-zinc-300 leading-relaxed text-sm sm:text-base">
-              Ser la ferretería líder de la región y reconocida por ofrecer los mejores
-              productos y soluciones para el hogar, convirtiendo nos en el referente principal
-              del sector ferretero local, expandiendo nuestra presencia a través de nuevos
-              puntos de venta. Somos reconocidos no solo como vendedores, sino como asesores
-              técnicos de nuestros clientes.
+              Convertirnos en la ferretería líder y referente de la región, destacando por la innovación en soluciones para el hogar y la excelencia en asesoría técnica. Aspiramos a expandir nuestro alcance a través de nuevos puntos de venta, consolidándonos como el aliado estratégico que transforma y potencia cada espacio de nuestros clientes.
             </p>
           </div>
         </motion.div>
