@@ -81,7 +81,7 @@ export default function Map() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm uppercase tracking-wider mb-1">Contáctanos</p>
-                  <p className="text-zinc-400 text-sm">998 123 4567</p>
+                  <a href="https://wa.me/529981265802?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 transition-colors text-sm font-semibold">+52 998 126 5802</a>
                 </div>
               </div>
             </div>
