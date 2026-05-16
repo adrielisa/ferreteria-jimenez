@@ -35,7 +35,7 @@ export default function Hero() {
             <br />
             plomería y 
             <br />
-            <span className="text-orange-500">Electricidad
+            <span className="text-orange-500">Electricidad en Cancún
             </span>
           </h1>
 

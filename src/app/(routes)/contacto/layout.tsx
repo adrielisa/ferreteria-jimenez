@@ -1,13 +1,21 @@
 import { Metadata } from 'next';
+import { siteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Contacto - Ferretería Jiménez | Contáctanos',
-  description: 'Comunícate con Ferretería Jiménez. WhatsApp, correo electrónico, visítanos en Cancún. Horarios, ubicación y respuestas a preguntas frecuentes.',
-  keywords: 'contacto, ferretería cancún, whatsapp, correo, ubicación, horarios, preguntas frecuentes',
+  title: 'Contacto y Ubicación en Cancún',
+  description:
+    'Contáctanos por WhatsApp al +52 998 126 5802 o visítanos en Cancún, Quintana Roo. Horarios de atención, dirección y preguntas frecuentes de Ferreterías Jiménez.',
+  keywords:
+    'contacto ferretería Cancún, ferretería Jiménez teléfono, dirección ferretería Cancún, horarios ferretería Cancún, WhatsApp ferretería',
+  alternates: {
+    canonical: `${siteUrl}/contacto`,
+  },
   openGraph: {
-    title: 'Contacto - Ferretería Jiménez',
-    description: 'Estamos aquí para ayudarte. Múltiples canales de comunicación disponibles.',
+    title: 'Contacto y Ubicación en Cancún | Ferreterías Jiménez',
+    description:
+      'Contáctanos por WhatsApp o visítanos en Cancún, Q.R. Horarios de atención y ubicación de nuestras sucursales.',
     type: 'website',
+    url: `${siteUrl}/contacto`,
   },
 };
 
