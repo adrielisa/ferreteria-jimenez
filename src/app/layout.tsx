@@ -100,7 +100,7 @@ const hardwareStoreSchema = {
   description:
     "Ferretería en Cancún con más de 15 años de experiencia. Herramientas, plomería, pintura y electricidad con las mejores marcas.",
   url: siteUrl,
-  telephone: "+529981265802",
+  telephone: "+529984059821",
   email: "fyt.jimenez@hotmail.com",
   priceRange: "$$",
   currenciesAccepted: "MXN",
@@ -125,7 +125,7 @@ const hardwareStoreSchema = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "09:00",
-      closes: "18:00",
+      closes: "20:00",
     },
     {
       "@type": "OpeningHoursSpecification",

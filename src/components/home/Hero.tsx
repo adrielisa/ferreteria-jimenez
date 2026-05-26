@@ -21,7 +21,7 @@ export default function Hero() {
             fill
             priority
             quality={80}
-            className="object-cover opacity-20"
+            className="object-cover opacity-45"
             sizes="100vw"
           />
           {/* Bottom gradient for readability */}

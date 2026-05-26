@@ -28,7 +28,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 sm:py-32 bg-zinc-50">
+    <section className="py-20 sm:py-32" style={{ backgroundColor: '#0E0E11' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,15 +37,15 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 text-orange-600 mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-500/10 text-orange-500 mb-6">
             <HelpCircle className="w-8 h-8" strokeWidth={2} />
           </div>
-          
-          <h2 className="text-4xl sm:text-5xl font-bold text-zinc-900 mb-4">
+
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Preguntas Frecuentes
           </h2>
-          
-          <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
+
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
             Resolvemos las dudas más comunes de nuestros clientes
           </p>
         </motion.div>
@@ -58,13 +58,20 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border border-zinc-200 rounded-xl overflow-hidden hover:border-orange-300 transition-colors"
+              className="rounded-xl overflow-hidden transition-colors"
+              style={{
+                backgroundColor: '#131316',
+                border: openIndex === index
+                  ? '1px solid rgba(249,115,22,0.4)'
+                  : '1px solid rgba(255,255,255,0.08)',
+              }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 sm:px-8 py-6 flex items-center justify-between gap-4 text-left hover:bg-zinc-50 transition-colors"
+                className="w-full px-6 sm:px-8 py-6 flex items-center justify-between gap-4 text-left transition-colors"
+                style={{ backgroundColor: 'transparent' }}
               >
-                <span className="font-semibold text-zinc-900 text-lg">
+                <span className="font-semibold text-white text-lg">
                   {faq.question}
                 </span>
                 <motion.div
@@ -72,7 +79,7 @@ export default function FAQ() {
                   transition={{ duration: 0.3 }}
                   className="shrink-0"
                 >
-                  <ChevronDown className="w-5 h-5 text-zinc-600" strokeWidth={2} />
+                  <ChevronDown className="w-5 h-5 text-zinc-400" strokeWidth={2} />
                 </motion.div>
               </button>
 
@@ -85,7 +92,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 sm:px-8 pb-6 text-zinc-600 leading-relaxed">
+                    <div className="px-6 sm:px-8 pb-6 text-zinc-400 leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -103,14 +110,14 @@ export default function FAQ() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <p className="text-zinc-600 mb-4">
+          <p className="text-zinc-500 mb-4">
             ¿No encuentras la respuesta que buscas?
           </p>
           <a
             href="https://wa.me/529981265802?text=Hola,%20tengo%20una%20pregunta"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full transition-colors"
+            className="inline-block bg-orange-600 hover:bg-orange-500 text-white font-semibold px-8 py-3 rounded-full transition-colors"
           >
             Contáctanos directamente
           </a>
