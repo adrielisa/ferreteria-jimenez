@@ -39,7 +39,7 @@ export default function ContactInfo() {
           {/* WhatsApp Card */}
           <motion.a
             variants={itemVariants}
-            href="https://wa.me/529981265802?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n"
+            href="https://wa.me/529984059821?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-2xl p-8 border border-white/5 hover:border-orange-500/40 transition-all duration-300 md:col-start-1 md:row-start-1"
@@ -54,7 +54,7 @@ export default function ContactInfo() {
             <h3 className="text-white font-bold text-xl mb-2">WhatsApp</h3>
             <p className="text-zinc-500 text-sm mb-4">Respuesta inmediata</p>
             <p className="text-orange-400 font-semibold text-lg group-hover:text-orange-300 transition-colors">
-              +52 998 126 5802
+              +52 998 405 9821
             </p>
           </motion.a>
 

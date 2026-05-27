@@ -10,7 +10,7 @@ interface WhatsAppButtonProps {
 
 export default function WhatsAppButton({
   message = 'Hola, me interesa cotizar productos de Ferreterías Jiménez',
-  phoneNumber = '529981234567', // Reemplazar con el número real
+  phoneNumber = '529984059821', // Reemplazar con el número real
   className = '',
   children = 'Cotiza ahora',
 }: WhatsAppButtonProps) {

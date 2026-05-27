@@ -114,7 +114,7 @@ export default function FAQ() {
             ¿No encuentras la respuesta que buscas?
           </p>
           <a
-            href="https://wa.me/529981265802?text=Hola,%20tengo%20una%20pregunta"
+            href="https://wa.me/529984059821?text=Hola,%20tengo%20una%20pregunta"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-orange-600 hover:bg-orange-500 text-white font-semibold px-8 py-3 rounded-full transition-colors"
